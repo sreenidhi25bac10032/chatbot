@@ -1,0 +1,73 @@
+% Start the chatbot
+start:-
+    write('Hello! I am your chatbot. Type "bye." to exit.'), nl,
+    chat.
+
+% Chat loop
+chat:-
+    write('You: '),
+    read(Input),
+    (   Input == bye -> 
+        write('Bot: Goodbye!'), nl
+    ;   respond(Input),
+        chat
+    ).
+
+% Responses
+respond(hello):-
+    write('Bot: Hi there!'), nl.
+
+respond(how_are_you):-
+    write('Bot: I am just a program, but I am fine!'), nl.
+
+respond(name):-
+    write('Bot: I am a cool chatbot.'), nl.
+
+respond(what_is_algorithm):-
+    write('Bot: Algorithm is a step-by-step procedure for solving a problem or achieving a goal.'), nl.
+
+respond(what_is_the_meaning_of_food_web_in_ecosystem):-
+    write('Bot: Network of food chains showing who eats whom.'), nl.
+
+respond(can_you_help_me):-
+    write('Bot: Yes, I am always here to help you.'), nl.
+
+respond(approx):-
+    write('Bot: Sorry, I am not able to understand.'), nl.
+
+respond(thankyou):-
+    write('Bot: You are always welcome.'), nl.
+
+respond(full_form_of_ai):-
+    write('Bot: Artificial Intelligence.'), nl.
+
+respond(how_is_the_weather_today):-
+    write('Bot: Likely to be rainy.'), nl.
+
+respond(which_exam_should_I_crack_to_become_a_doctor):-
+    write('Bot: NEET.'), nl.
+
+respond(what_is_the_full_form_of_NEET):-
+    write('Bot: National Entrance cum Eligibility Test.'), nl.
+
+respond(father_of_nation):-
+    write('Bot: Mahatma Gandhi.'), nl.
+
+respond(can_you_tell_me_a_joke):-
+    write('Bot: Computer went to the hospital because it caught a virus.'), nl.
+
+respond(what_is_the_capital_of_France):-
+    write('Bot: Paris.'), nl.
+
+respond(what_is_the_scientific_name_of_tiger):-
+    write('Bot: Panthera Tigris.'), nl.
+
+respond(who_proposed_the_double_helix_model_of_DNA):-
+    write('Bot: Watson and Crick.'), nl.
+
+respond(Ten_divided_by_two_gives):-
+    write('Bot: 5.'), nl.
+
+% Default response
+respond(_):-
+    write('Bot: I do not understand.'), nl.
